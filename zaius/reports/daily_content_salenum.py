@@ -39,7 +39,7 @@ class DailyContent2(ReportSpec):
         writer = csv.DictWriter(destination, columns)
         writer.writeheader()
 
-        salenum = self._parse_date(args.salenum)
+        salenum = args.salenum
 
         # build our query
         params = {
