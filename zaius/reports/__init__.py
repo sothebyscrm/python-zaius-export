@@ -13,7 +13,7 @@ from . import product_attribution
 from . import lifecycle_progress
 from . import email_metrics
 from . import daily_content
-from . import daily-content-salenum
+from . import daily_content_salenum
 
 
 SPECS = ReportSpec.specs
