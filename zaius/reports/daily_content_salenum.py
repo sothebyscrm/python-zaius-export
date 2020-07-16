@@ -39,7 +39,7 @@ class DailyContent2(ReportSpec):
         writer = csv.DictWriter(destination, columns)
         writer.writeheader()
 
-        salenum = self._parse_date(args.end_date)
+        salenum = self._parse_date(args.salenum)
 
         # build our query
         params = {
@@ -64,15 +64,10 @@ class DailyContent2(ReportSpec):
             event_type = 'marketing_email'
             and action = 'content'
             and marketing_content_sale_numbers = salenum
-            #and campaign_schedule_run_ts >= {start_date_s}
-            #and campaign_schedule_run_ts < {end_date_s}
           )
           or (
             event_type = 'email'
             and action = 'click'
-            #and ts >= {start_date_s}
-            #and campaign_schedule_run_ts >= {start_date_s}
-            #and campaign_schedule_run_ts < {end_date_s}
             and campaign_id= '9097'
           )
         order by value, zaius_id, action
