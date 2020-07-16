@@ -11,7 +11,7 @@ import urllib.parse as parse
 from .spec import ReportSpec
 
 
-class DailyContent(ReportSpec):
+class DailyContent2(ReportSpec):
     """Daily Marketing Content Report"""
 
     def register_args(self, parser):
@@ -187,4 +187,4 @@ class DailyContent(ReportSpec):
         )
 
 
-ReportSpec.register(DailyContent())
+ReportSpec.register(DailyContent2())
