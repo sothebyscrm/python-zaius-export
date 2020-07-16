@@ -16,7 +16,7 @@ class DailyContent(ReportSpec):
 
     def register_args(self, parser):
         parser = parser.add_parser(
-            "daily-content"
+            "daily-content-salenum"
             # help="individual purchases attributed to the 3-day last touched campaign"
         )
         # parser.add_argument("campaign_id",
