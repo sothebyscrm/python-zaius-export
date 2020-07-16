@@ -43,6 +43,7 @@ class DailyContent2(ReportSpec):
 
         start_date = self._parse_date(args.start_date)
         end_date = self._parse_date(args.end_date)
+        salenum = self._parse_date(args.end_date)
 
         # build our query
         params = {
