@@ -22,8 +22,6 @@ class DailyContent2(ReportSpec):
         # parser.add_argument("campaign_id",
         #                     help="the ID of the campaign to get metrics for",
         #                     default='9097')
-        parser.add_argument("start_date", help="earlist date, YYYY-MM-DD, inclusive")
-        parser.add_argument("end_date", help="latest date, YYYY-MM-DD, exclusive")
         parser.add_argument("salenum", help="salenumber to analyse")        
         parser.set_defaults(func=self.execute)
 
@@ -41,14 +39,10 @@ class DailyContent2(ReportSpec):
         writer = csv.DictWriter(destination, columns)
         writer.writeheader()
 
-        start_date = self._parse_date(args.start_date)
-        end_date = self._parse_date(args.end_date)
         salenum = self._parse_date(args.end_date)
 
         # build our query
         params = {
-            "start_date_s": int(start_date.timestamp()),
-            "end_date_s": int(end_date.timestamp()),
         }
         stmt = """
         select
